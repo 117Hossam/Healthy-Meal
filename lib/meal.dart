@@ -14,6 +14,6 @@ class Meal {
 
   @override
   String toString() {
-    return _name; // used in radio button labels
+    return _name;
   }
 }
