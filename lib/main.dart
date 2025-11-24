@@ -25,8 +25,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String selectedCategory = "Breakfast"; // default
-  Meal? selectedMeal; // chosen meal
+  String selectedCategory = "Breakfast";
+  Meal? selectedMeal;
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +40,12 @@ class _HomeState extends State<Home> {
             const SizedBox(height: 20),
             const Text("Select Category", style: TextStyle(fontSize: 22,color: Colors.deepPurple,fontWeight: FontWeight.w600)),
             const SizedBox(height: 10),
-
-            // DropdownMenu for categories
             DropdownMenu(
               initialSelection: selectedCategory,
               onSelected: (mealCategory) {
                 setState(() {
                   selectedCategory = mealCategory!;
-                  selectedMeal = null; // reset meal when category changes
+                  selectedMeal = null; 
                 });
               },
               dropdownMenuEntries: mealsByCategory.keys.map((category) {
@@ -58,8 +56,6 @@ class _HomeState extends State<Home> {
             const SizedBox(height: 20),
             const Text("Select Meal", style: TextStyle(fontSize: 22,color: Colors.deepPurple, fontWeight: FontWeight.w600)),
             const SizedBox(height: 10),
-
-            // Radio buttons for meals
             Column(
               children: categoryMeals.map((meal) {
                 return RadioListTile<Meal>(
@@ -78,8 +74,6 @@ class _HomeState extends State<Home> {
             ),
 
             const SizedBox(height: 20),
-
-            // Meal details
             if (selectedMeal != null) SingleChildScrollView(
                 child: Card(
                   color: Colors.greenAccent,
@@ -93,7 +87,6 @@ class _HomeState extends State<Home> {
                             style: const TextStyle(
                                 color: Colors.deepPurple,fontSize: 20, fontWeight: FontWeight.bold)),
                         Text(selectedMeal!.description,),
-                            // style: const TextStyle(color: Colors.grey)),
                         const Divider(),
                         const Text("Ingredients:",
                             style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w600)),
