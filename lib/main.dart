@@ -74,8 +74,8 @@ class _HomeState extends State<Home> {
             ),
 
             const SizedBox(height: 20),
-            if (selectedMeal != null) SingleChildScrollView(
-                child: Card(
+            if (selectedMeal != null)
+              Card(
                   color: Colors.greenAccent,
                   margin: const EdgeInsets.all(15),
                   child: Padding(
@@ -101,7 +101,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-              ),
+              
 
           ],
         ),
